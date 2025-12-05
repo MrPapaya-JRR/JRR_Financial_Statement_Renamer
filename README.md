@@ -331,21 +331,36 @@ You may NOT:
 
 ## Version history
 
-- **v1.23:** Added color theme selection tab  
-- **v1.22:** Integrated color theme system  
-- **v1.21:** Improved handling when program is already running  
-- **v1.20:** Enhanced color-coded logging  
-- **v1.19:** Added color-coded activity log messages  
-- **v1.18:** Window size persistence between sessions  
-- **v1.17:** Enhanced month selection dialog, auto-scroll activity log  
-- **v1.16:** Improved date entry with dropdown menus, remembers last folder  
-- **v1.15:** Fixed pattern matching bug  
-- **v1.14:** Added drag-and-drop support for Single File tab  
-- **v1.13:** Added date input fields for files without dates  
-- **v1.12:** Added support for generic filenames like “document.pdf”  
-- **v1.11:** Added dynamic window resizing and improved help text  
-- **v1.10:** All functions made functional  
-- **v1.00:** Initial release with basic GUI
+;; v1.00 - Basic GUI layout completed with lots of placeholder elements.
+;; v1.10 - All function made functional.
+;; v1.11 - Path Normalization (NormalizePath() function) Automatically adds trailing backslash If missing
+;;         Dynamic GUI Resizing (ResizeGUI() procedure)
+;;         Responds To #PB_Event_SizeWindow - when user drags window edges
+;;         Responds To tab changes - adjusts For each tab's layout
+;;         Improved Help & About text for those tabs
+;; v1.12 - Add routines to deal with generic filenames such as Document.pdf
+;; v1.13 - Added date Input Fields for mystery files, improved window resizing
+;; v1.14 - The 'Single File' tab now lets you drag a file into the window instead of using the file browser.
+;; v1.15 - Fixed MatchPattern() bug
+;; v1.16 - Replaced year/date entry on the 'multiple patterns match' window with ComboBoxes. Now remembers last used folder under FOLDER tab.
+;; v1.17 - Replaced NormailzePath() with EnsurePathSeparator() from the includes. Added Activity Log Auto-Scroll. Enhanced Month Selection Dialog.
+;; v1.18 - Window size now persists between sessions and is saved to .ini file
+;; v1.19 - Added proper color-coded logging that actually works.
+;; v1.20 - Why is adding color-coded logging so difficult?
+;; v1.21 - Added better Mutex routine. (If found, brings window to foreground, otherwise shows a requester)
+;; v1.22 - Integrated the color theme system code
+;; v1.23 - Add a tab for choosing the color theme
+;; v1.24 - Trying to improve detection logic for the watched folder tab.
+;;       - Different files With the same name (but different size, date, etc) were Not getting seen As new files.
+;; v1.25 - Updated detected date formats in the MatchPattern() procedure and ExtractDateFromPattern(). It should properly match...
+;;       - YYYYMMDD - 8 digits (e.g., 20251031)
+;;       - YYYY-MM-DD - separated format
+;;       - MMDDYY - 6 digits (e.g., 103125)
+;;       - YYMMDD - 6 digits (e.g., 251031)
+;;       - Individual YYYY, MM, DD placeholders
+;; v1.26 - In the 'Multiple Patterns Match' preview window, under the New Filename Preview column, the filenames are now shown with updated dates.
+;; v1.27 - Comments and formatting no longer get removed from the .ini
+;;       - A full explanatory header is added If the header is missing Or the file doesn't exist.
 
 ---
 
